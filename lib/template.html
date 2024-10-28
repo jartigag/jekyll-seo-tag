@@ -79,7 +79,9 @@
     <meta name="twitter:creator" content="@{{ seo_tag.author.twitter | remove:'@' }}" />
   {% endif %}
 {% endif %}
-
+  {% if seo_tag.author.name %}
+  <meta name="fediverse:creator" content="@{{ seo_tag.author.name | remove:'@' }}@mastodon.social" />
+  {% endif %}
 {% if site.facebook %}
   {% if site.facebook.admins %}
     <meta property="fb:admins" content="{{ site.facebook.admins }}" />
